@@ -26,7 +26,51 @@
 /* Sort three integers x, y, z in ascending order.*/
 
 void sort (int *a, int *b, int *c)
-{
+{ 
+  if(*a<*b)
+  {
+    if(*b<*c)
+    {}
+    else
+    {
+      *b = *b+*c;
+      *c = *b-*c;
+      *b = *b-*c;
+    
+      if(*a<*c)
+      {}
+      else
+      {
+        *a = *a+*c;
+        *c = *a-*c;
+        *a = *a-*c;
+      } 
+    }
+  }
+  else
+  {
+    *a = *a+*b;
+    *b = *a-*b;
+    *a = *a-*b; 
+
+    if(*a<*c)
+    {}
+    else
+    {
+      *a = *a+*c;
+      *c = *a-*c;
+      *a = *a-*c; 
+    }
+
+    if(*b<*c)
+    {}
+    else
+    {
+      *b = *b+*c;
+      *c = *b-*c;
+      *b = *b-*c; 
+    }
+  }
 }
 
 /* Do not edit this function. */
@@ -47,7 +91,7 @@ int main (int argc, char **argv)
   
   sort (&a, &b, &c);
 
-  printf ("%d %d %d\n", a, b, c);
+  printf ("%d %d %d\n", a, b, c); 
   
   return 0;
 }

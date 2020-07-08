@@ -26,9 +26,13 @@
 
 /* Count the number of letters in string s.*/
 
-int lettercount (char *s)
+int lettercount (char* name)
 {
-  return 0;
+    int c;
+    for(c = 0; name [c] != 0; c++)
+    {}
+
+    return c-1;
 }
 
 

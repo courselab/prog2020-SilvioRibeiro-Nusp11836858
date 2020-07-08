@@ -30,6 +30,13 @@
 
 void lastname (char *s)
 {
+  int c = 0;
+  for(;s[c] != 32; c++)
+  {}
+  char a[c];
+  for(int x = 0; s[x] != 32; x++)
+  a[x] = s[x] - 32;
+  printf("%s", a);
 }
 
 
@@ -45,7 +52,7 @@ int main (int argc, char **argv)
   
   lastname (name);
 
-  printf ("%s\n", name);
+  //printf ("%s\n", name);
   
   return 0;
 }
