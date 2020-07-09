@@ -22,6 +22,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 256
 
@@ -30,13 +31,28 @@
 
 void lastname (char *s)
 {
-  int c = 0;
-  for(;s[c] != 32; c++)
-  {}
-  char a[c];
-  for(int x = 0; s[x] != 32; x++)
-  a[x] = s[x] - 32;
-  printf("%s", a);
+  int lastPos;
+for(int i=0;i<MAX;i++){
+if(s[i]==*" ")
+    lastPos=i;
+if(s[i]==*"\n"){
+    s[i]=*"\0";
+    break;}
+}
+char resposta[MAX];
+lastPos+=1;
+strcpy(resposta,s+lastPos);
+int lastnamelen=strlen(s+lastPos);
+char* bufptr;
+bufptr=resposta+lastnamelen;
+*(bufptr++)= *",";
+*(bufptr++)= *" ";
+s[--lastPos]=0;
+strcpy(bufptr,s);
+for(int i=1;i<lastnamelen;i++){
+resposta[i]-=32;
+}
+strcpy(s,resposta);
 }
 
 
@@ -52,7 +68,7 @@ int main (int argc, char **argv)
   
   lastname (name);
 
-  //printf ("%s\n", name);
+  printf ("%s\n", name);
   
   return 0;
 }
