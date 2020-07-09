@@ -18,13 +18,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 /* Verify if the positive integer 'a' is prime. */
 
 int is_prime (int a)
 {
-  for (int Nt=2; Nt <= sqrt(a); Nt++)
+  for (int Nt=2; Nt <= a/2; Nt++)
   { 
     if(a%Nt == 0)
     {
