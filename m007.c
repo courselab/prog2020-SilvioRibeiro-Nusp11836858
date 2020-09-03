@@ -28,7 +28,11 @@
 
 int lettercount (char *s)
 {
-  return 0;
+    int c;
+    for(c = 0; name [c] != 0; c++)
+    {}
+
+    return c-1;
 }
 
 

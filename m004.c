@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 /* Return the value in decimal base of the string b, interpreted
    as the a positive binary number. If the string contains any
@@ -29,8 +30,27 @@
 
 int decimal (char *b)
 {
-  
-  return 0;
+  int S =0;
+  int Np;
+
+  for(Np = 0; b[Np] !=0; Np++)
+  {
+    if (b[Np] != 48)
+    {
+      if(b[Np] != 49)
+      {
+        printf("Use um numero válido\n");
+        exit (1);
+      }
+    }
+  }
+
+  for(int c=0; b[c] !=0; c++)
+    {
+      S = (b[c]-48)*pow(2,((Np-1)-c)) +S;
+    }
+
+  return S;
 }
 
 #define USAGE "m004 <string>\n"
